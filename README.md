@@ -14,8 +14,8 @@ Each script creates an isolated environment with its own virtual environment and
 
 ```bash
 # Clone this repository
-git clone https://github.com/dwhite1/trading_setup.git
-cd trading_setup
+git clone https://github.com/dwhite1/trading-setup.git
+cd trading-setup
 
 # Make scripts executable
 chmod +x *.sh
@@ -33,18 +33,18 @@ chmod +x *.sh
 
 ### `setup_model_dev.sh`
 Sets up the model development environment:
-- Creates `model_dev` directory with virtual environment
+- Creates `model-dev` directory with virtual environment
 - Clones and installs:
-  - `trading_model_helper` (core package)
-  - `model_builder` (GUI application)
+  - `trading-model-helper` (core package)
+  - `model-builder` (GUI application)
 - Configures all dependencies in development mode
 
 ### `setup_trading_dev.sh`
 Sets up the live trading environment:
-- Creates `trading_dev` directory with virtual environment
+- Creates `trading-dev` directory with virtual environment
 - Clones and installs:
-  - `trading_model_helper` (core package)
-  - `algo_trading_app` (live trading application)
+  - `trading-model-helper` (core package)
+  - `algo-trading-app` (live trading application)
 - Configures all dependencies in development mode
 
 ## Directory Structure
@@ -53,15 +53,15 @@ After running the scripts, you'll have the following structure:
 
 ```
 ~/your/path/
-├── model_dev/              # Model development environment
+├── model-dev/              # Model development environment
 │   ├── .venv/
-│   ├── trading_model_helper/
-│   └── model_builder/
+│   ├── trading-model-helper/
+│   └── model-builder/
 │
-└── trading_dev/           # Live trading environment
+└── trading-dev/           # Live trading environment
     ├── .venv/
-    ├── trading_model_helper/
-    └── algo_trading_app/
+    ├── trading-model-helper/
+    └── algo-trading-app/
 ```
 
 ## Prerequisites
@@ -69,9 +69,9 @@ After running the scripts, you'll have the following structure:
 - Python 3.8+
 - Git with credential manager configured
 - GitHub access to the private repositories:
-  - [trading_model_helper](https://github.com/dwhite1/trading_model_helper)
-  - [model_builder](https://github.com/dwhite1/model_builder)
-  - [algo_trading_app](https://github.com/dwhite1/algo_trading_app)
+  - [trading-model-helper](https://github.com/dwhite1/trading-model-helper)
+  - [model-builder](https://github.com/dwhite1/model-builder)
+  - [algo-trading-app](https://github.com/dwhite1/algo-trading-app)
 
 ## Git Credential Setup
 

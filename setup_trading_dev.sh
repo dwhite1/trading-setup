@@ -4,10 +4,10 @@
 set -e
 
 # Configuration
-DEV_DIR="trading_dev"
+DEV_DIR="trading-dev"
 VENV_NAME=".venv"
-HELPER_REPO="https://github.com/dwhite1/trading_model_helper.git"
-TRADING_REPO="https://github.com/dwhite1/algo_trading_app.git"
+HELPER_REPO="https://github.com/dwhite1/trading-model-helper.git"
+TRADING_REPO="https://github.com/dwhite1/algo-trading-app.git"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -40,28 +40,28 @@ echo -e "\n${GREEN}Upgrading pip...${NC}"
 pip install --upgrade pip
 
 # Clone repositories if they don't exist
-if [ ! -d "trading_model_helper" ]; then
-    echo -e "\n${GREEN}Cloning trading_model_helper repository...${NC}"
+if [ ! -d "trading-model-helper" ]; then
+    echo -e "\n${GREEN}Cloning trading-model-helper repository...${NC}"
     git clone "$HELPER_REPO"
 else
-    echo -e "\n${YELLOW}trading_model_helper already exists, pulling latest changes...${NC}"
-    (cd trading_model_helper && git pull)
+    echo -e "\n${YELLOW}trading-model-helper already exists, pulling latest changes...${NC}"
+    (cd trading-model-helper && git pull)
 fi
 
-if [ ! -d "algo_trading_app" ]; then
-    echo -e "\n${GREEN}Cloning algo_trading_app repository...${NC}"
+if [ ! -d "algo-trading-app" ]; then
+    echo -e "\n${GREEN}Cloning algo-trading-app repository...${NC}"
     git clone "$TRADING_REPO"
 else
-    echo -e "\n${YELLOW}algo_trading_app already exists, pulling latest changes...${NC}"
-    (cd algo_trading_app && git pull)
+    echo -e "\n${YELLOW}algo-trading-app already exists, pulling latest changes...${NC}"
+    (cd algo-trading-app && git pull)
 fi
 
 # Install packages in development mode
-echo -e "\n${GREEN}Installing trading_model_helper in development mode...${NC}"
-(cd trading_model_helper && pip install -e .)
+echo -e "\n${GREEN}Installing trading-model-helper in development mode...${NC}"
+(cd trading-model-helper && pip install -e .)
 
-echo -e "\n${GREEN}Installing algo_trading_app in development mode...${NC}"
-(cd algo_trading_app && pip install -e .)
+echo -e "\n${GREEN}Installing algo-trading-app in development mode...${NC}"
+(cd algo-trading-app && pip install -e .)
 
 # Verify installation
 echo -e "\n${GREEN}Verifying installation...${NC}"
