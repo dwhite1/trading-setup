@@ -6,8 +6,8 @@ set -e
 # Configuration
 DEV_DIR="model-dev"
 VENV_NAME=".venv"
-HELPER_REPO="https://github.com/dwhite1/trading-model-helper.git"
-BUILDER_REPO="https://github.com/dwhite1/model-builder.git"
+HELPER_REPO="https://github.com/dwhite1/trading_model_helper.git"
+BUILDER_REPO="https://github.com/dwhite1/model_builder.git"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -40,28 +40,28 @@ echo -e "\n${GREEN}Upgrading pip...${NC}"
 pip install --upgrade pip
 
 # Clone repositories if they don't exist
-if [ ! -d "trading-model-helper" ]; then
-    echo -e "\n${GREEN}Cloning trading-model-helper repository...${NC}"
+if [ ! -d "trading_model_helper" ]; then
+    echo -e "\n${GREEN}Cloning trading_model_helper repository...${NC}"
     git clone "$HELPER_REPO"
 else
-    echo -e "\n${YELLOW}trading-model-helper already exists, pulling latest changes...${NC}"
-    (cd trading-model-helper && git pull)
+    echo -e "\n${YELLOW}trading_model_helper already exists, pulling latest changes...${NC}"
+    (cd trading_model_helper && git pull)
 fi
 
-if [ ! -d "model-builder" ]; then
-    echo -e "\n${GREEN}Cloning model-builder repository...${NC}"
+if [ ! -d "model_builder" ]; then
+    echo -e "\n${GREEN}Cloning model_builder repository...${NC}"
     git clone "$BUILDER_REPO"
 else
-    echo -e "\n${YELLOW}model-builder already exists, pulling latest changes...${NC}"
-    (cd model-builder && git pull)
+    echo -e "\n${YELLOW}model_builder already exists, pulling latest changes...${NC}"
+    (cd model_builder && git pull)
 fi
 
 # Install packages in development mode
-echo -e "\n${GREEN}Installing trading-model-helper in development mode...${NC}"
-(cd trading-model-helper && pip install -e .)
+echo -e "\n${GREEN}Installing trading_model_helper in development mode...${NC}"
+(cd trading_model_helper && pip install -e .)
 
-echo -e "\n${GREEN}Installing model-builder in development mode...${NC}"
-(cd model-builder && pip install -e .)
+echo -e "\n${GREEN}Installing model_builder in development mode...${NC}"
+(cd model_builder && pip install -e .)
 
 # Verify installation
 echo -e "\n${GREEN}Verifying installation...${NC}"
