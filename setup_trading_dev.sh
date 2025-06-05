@@ -4,7 +4,7 @@
 set -e
 
 # Configuration
-DEV_DIR="trading-dev"
+DEV_DIR="trading_dev"
 VENV_NAME=".venv"
 HELPER_REPO="https://github.com/dwhite1/trading_model_helper.git"
 TRADING_REPO="https://github.com/dwhite1/algo_trading_app.git"
